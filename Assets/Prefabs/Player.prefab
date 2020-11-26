@@ -112,6 +112,7 @@ MonoBehaviour:
   playerPostions: []
   levelLoader: {fileID: 0}
   linePointDiff: 0.1
+  time: 0
 --- !u!50 &5655603377370649763
 Rigidbody2D:
   serializedVersion: 4

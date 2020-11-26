@@ -26,7 +26,11 @@ public class PlayerMovement : MonoBehaviour
     int previousColour = 0;
 
     Vector2 movement;
-    Vector2 mousePos;
+    //Timer
+    public float time;
+    bool playerMoved = false;
+    public Animator timerAnimator;
+    public bool timerOn;
 
     //obstacle checks
     bool touchingHole = false;
@@ -62,13 +66,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
         if (cam == null)
         {
             cam = Camera.main;
         }
 
+        
 
+        
 
         Vector2 tempPlayerPos = rb.position;
 
@@ -90,7 +95,31 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        /*TIMER*/
+        if (timerOn == true)
+        {
+            if (movement.x != 0 || movement.y != 0)
+            {
+                timerAnimator.SetTrigger("Start");
+                playerMoved = true;
+            }
+        }
+
+
+        if (timerOn == true)
+        {
+            if (playerMoved == true)
+            {
+                time += Time.deltaTime;
+                if (time >= 10)
+                {
+                    walkSpeed = 0;
+                    levelLoader.loadCurrentLevel();
+                }
+            }
+        }
+
+
 
 
         //Movement
@@ -133,8 +162,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
-
+        
 
 
         //DEBUG
