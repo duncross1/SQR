@@ -11,13 +11,16 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
 
     public Sprite[] playerSprites = new Sprite[3];
-    
+
     public GameObject[] linePrefabs = new GameObject[3];
     public GameObject currentLine;
     public LineRenderer lineRenderer;
     public EdgeCollider2D edgeCollider;
     public List<Vector2> playerPostions;
-    
+
+    public LevelLoader levelLoader;
+
+    public float linePointDiff = 0.3f;
 
     int colour = 0; //0 = red, 1 = green, 2 = blue
     int previousColour = 0;
@@ -25,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
-    
+    //obstacle checks
+    bool touchingHole = false;
+
+
     void Start()
     {
         Debug.Log("B");
@@ -56,18 +62,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-       
+
         if (cam == null)
         {
             cam = Camera.main;
         }
 
 
+
         Vector2 tempPlayerPos = rb.position;
 
-        if(previousColour == colour)
+        if (previousColour == colour)
         {
-            if (Vector2.Distance(tempPlayerPos, playerPostions[playerPostions.Count - 1]) > .1f)
+            if (Vector2.Distance(tempPlayerPos, playerPostions[playerPostions.Count - 1]) > linePointDiff)
             {
                 UpdateLine(tempPlayerPos);
             }
@@ -77,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             previousColour = colour;
             CreateLine();
         }
-        
+
 
         //Input
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -99,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         //Colour swapping
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(colour == 0)
+            if (colour == 0)
             {
                 colour = 2;
             }
@@ -108,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
                 colour -= 1;
             }
             GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
+            linePointDiff = 0.1f;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -124,8 +132,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        
-        
+
+
 
 
 
@@ -134,6 +142,8 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        Debug.Log(touchingHole);
     }
 
 
@@ -145,14 +155,16 @@ public class PlayerMovement : MonoBehaviour
         //Purple Walls
         if (collision.gameObject.tag == "PurpleWall")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            walkSpeed = 0;
+            levelLoader.loadCurrentLevel();
         }
         //Red Walls
         if (collision.gameObject.tag == "RedWall")
         {
             if (colour != 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
         }
         //Green Walls
@@ -160,15 +172,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (colour != 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
         }
         //Blue Walls
         if (collision.gameObject.tag == "BlueWall")
         {
-            if(colour != 2)
+            if (colour != 2)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
         }
 
@@ -176,10 +190,10 @@ public class PlayerMovement : MonoBehaviour
         //Red Line
         if (collision.gameObject.tag == "RedLine")
         {
-            Debug.Log("Yes");
             if (colour != 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
         }
         //Green Line
@@ -187,7 +201,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (colour != 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
         }
         //Blue Line
@@ -195,8 +210,84 @@ public class PlayerMovement : MonoBehaviour
         {
             if (colour != 2)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
             }
+        }
+
+        //OBSTACLES
+        //FinishLine
+        if (collision.gameObject.tag == "LevelFinish")
+        {
+            walkSpeed = 0;
+            levelLoader.loadNextLevel();
+        }
+        //Moving Holes
+        if (collision.gameObject.tag == "RedMovingHole")
+        {
+            if (colour == 0)
+            {
+                touchingHole = true;
+            }
+            else
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+        }
+        if (collision.gameObject.tag == "GreenMovingHole")
+        {
+            if(colour == 1)
+            {
+                touchingHole = true;
+            }
+            else
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+            
+        }
+        if (collision.gameObject.tag == "BlueMovingHole")
+        {
+            if (colour == 2)
+            {
+                touchingHole = true;
+            }
+            else
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+
+        }
+
+        //Obstacle Wall
+        if (collision.gameObject.tag == "ObstacleWall")
+        {
+            if (touchingHole == false)
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+        }
+    }
+
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        //Moving Holes
+        if (collision.gameObject.tag == "RedMovingHole")
+        {
+            touchingHole = false;
+        }
+        if (collision.gameObject.tag == "GreenMovingHole")
+        {
+            touchingHole = false;
+        }
+        if (collision.gameObject.tag == "BlueMovingHole")
+        {
+            touchingHole = false;
         }
     }
 }

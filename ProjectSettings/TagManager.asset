@@ -12,6 +12,11 @@ TagManager:
   - BlueLine
   - GreenLine
   - LevelFinish
+  - LevelLoader
+  - ObstacleWall
+  - GreenMovingHole
+  - BlueMovingHole
+  - RedMovingHole
   layers:
   - Default
   - TransparentFX

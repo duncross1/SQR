@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5655603377370649760}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,8 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   edgeCollider: {fileID: 0}
   playerPostions: []
+  levelLoader: {fileID: 0}
+  linePointDiff: 0.1
 --- !u!50 &5655603377370649763
 Rigidbody2D:
   serializedVersion: 4
