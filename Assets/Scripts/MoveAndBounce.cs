@@ -5,11 +5,15 @@ using UnityEngine;
 public class MoveAndBounce : MonoBehaviour
 {
     public float speed = 10f;
+    public bool reverse;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (reverse == true)
+        {
+            speed = speed * -1;
+        }
     }
 
     // Update is called once per frame
