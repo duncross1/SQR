@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         
-
+        
         
 
         Vector2 tempPlayerPos = rb.position;
@@ -146,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
                 colour -= 1;
             }
             GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
-            linePointDiff = 0.1f;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -268,6 +267,27 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Key1" || collision.gameObject.tag == "Key2")
         {
             Destroy(collision.gameObject);
+        }
+        //Colour Switchers
+        if (collision.gameObject.tag == "ColourRandomizer")
+        {
+            if (Random.value < 0.5f)
+            {
+                colour = colour + 1;
+                if(colour == 3)
+                {
+                    colour = 0;
+                }
+            } 
+            else
+            {
+                colour = colour - 1;
+                if (colour == -1)
+                {
+                    colour = 2;
+                }
+            }
+            GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
         }
         //Moving Holes
         if (collision.gameObject.tag == "RedMovingHole")

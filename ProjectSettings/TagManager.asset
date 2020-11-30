@@ -20,6 +20,7 @@ TagManager:
   - Key1
   - KeyWall
   - Key2
+  - ColourRandomizer
   layers:
   - Default
   - TransparentFX
