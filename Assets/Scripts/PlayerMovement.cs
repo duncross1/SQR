@@ -98,11 +98,13 @@ public class PlayerMovement : MonoBehaviour
         /*TIMER*/
         if (timerOn == true)
         {
-            if (movement.x != 0 || movement.y != 0)
+            //If player moves or switches colour start the timer
+            if (movement.x != 0 || movement.y != 0 || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
             {
                 timerAnimator.SetTrigger("Start");
                 playerMoved = true;
             }
+
         }
 
 
@@ -170,14 +172,13 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        Debug.Log(touchingHole);
     }
 
 
 
     /*Collsions*/
-    void OnTriggerEnter2D(Collider2D collision)
+    //Triggered every frame while inside of trigger
+    void OnTriggerStay2D(Collider2D collision)
     {
         //WALLS
         //Purple Walls
@@ -213,7 +214,20 @@ public class PlayerMovement : MonoBehaviour
                 levelLoader.loadCurrentLevel();
             }
         }
+        //Obstacle Wall
+        if (collision.gameObject.tag == "ObstacleWall")
+        {
+            if (touchingHole == false)
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+        }
+    }
 
+    //Triggered when entering a trigger
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         //LINES
         //Red Line
         if (collision.gameObject.tag == "RedLine")
@@ -249,6 +263,11 @@ public class PlayerMovement : MonoBehaviour
         {
             walkSpeed = 0;
             levelLoader.loadNextLevel();
+        }
+        //Keys
+        if (collision.gameObject.tag == "Key1" || collision.gameObject.tag == "Key2")
+        {
+            Destroy(collision.gameObject);
         }
         //Moving Holes
         if (collision.gameObject.tag == "RedMovingHole")
@@ -290,18 +309,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        //Obstacle Wall
-        if (collision.gameObject.tag == "ObstacleWall")
-        {
-            if (touchingHole == false)
-            {
-                walkSpeed = 0;
-                levelLoader.loadCurrentLevel();
-            }
-        }
+        
     }
 
-
+    //Triggered when leaving a trigger
     void OnTriggerExit2D(Collider2D collision)
     {
         //Moving Holes

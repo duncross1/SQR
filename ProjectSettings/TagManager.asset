@@ -17,6 +17,9 @@ TagManager:
   - GreenMovingHole
   - BlueMovingHole
   - RedMovingHole
+  - Key1
+  - KeyWall
+  - Key2
   layers:
   - Default
   - TransparentFX

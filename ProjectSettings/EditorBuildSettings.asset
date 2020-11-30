@@ -9,23 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 785b43d036622c145a3f55dd2725e82b
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/Tutorial1.unity
+    path: Assets/Scenes/Actual Levels/TUT_Move.unity
     guid: 0320a8b2eccf31c4db4c705a0189203c
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/Tutorial2.unity
+    path: Assets/Scenes/Actual Levels/TUT_Switch.unity
     guid: f8607891592f7e84eb3df7e875e06f70
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/NewLevel.unity
+    path: Assets/Scenes/Actual Levels/TUT_Timer.unity
     guid: 1e548e10a2a47ef48a1e8fbd6f8a807b
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/CameraTest.unity
+    path: Assets/Scenes/Actual Levels/TUT_Timer2.unity
     guid: b00552b284b18bc489ad459dbf8704e0
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/MovingHole.unity
+    path: Assets/Scenes/Actual Levels/TUT_MovingHole.unity
     guid: bd5e6b627ff6ae840b55fc915c2771f1
   - enabled: 1
-    path: Assets/Scenes/SmallerLevel.unity
+    path: Assets/Scenes/Actual Levels/Level1.unity
     guid: d42933e028f5f404d961c2f1ffba98c9
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/Level2.unity
+    guid: aeba9d7bfb936344fb44d675fa254580
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/KeyWall.unity
+    guid: 5518e757644a4f54e9ccc328b84cca6c
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/ALevel.unity
+    guid: f2c008ab46802ba43a73256c7ee49b61
   - enabled: 1
     path: Assets/Scenes/Draw Scene.unity
     guid: f75b08e42ee04e5468ac263841f98a42

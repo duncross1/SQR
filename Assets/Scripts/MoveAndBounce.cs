@@ -6,6 +6,7 @@ public class MoveAndBounce : MonoBehaviour
 {
     public float speed = 10f;
     public bool reverse;
+    public bool horizontal;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,15 @@ public class MoveAndBounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += Vector3.up * speed * Time.deltaTime;
+        if(horizontal == false)
+        {
+            this.transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+        else
+        {
+            this.transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)

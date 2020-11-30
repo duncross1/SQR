@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
+        FindObjectOfType<AudioManager>().PlaySong("Music");
         levelLoader.loadNextLevel();
     }
 
