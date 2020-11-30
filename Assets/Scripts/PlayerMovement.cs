@@ -44,14 +44,16 @@ public class PlayerMovement : MonoBehaviour
 
     void CreateLine()
     {
-        currentLine = Instantiate(linePrefabs[colour], Vector3.zero, Quaternion.identity);
+       
+        currentLine = Instantiate(linePrefabs[colour], new Vector3(0, 0, -1), Quaternion.identity);
         lineRenderer = currentLine.GetComponent<LineRenderer>();
         edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
         playerPostions.Clear();
+        Vector3 linepos = new Vector3(rb.position.x, rb.position.y, 1);
         playerPostions.Add(rb.position);
         playerPostions.Add(rb.position);
-        lineRenderer.SetPosition(0, playerPostions[0]);
-        lineRenderer.SetPosition(1, playerPostions[1]);
+        lineRenderer.SetPosition(0, new Vector3(playerPostions[0].x, playerPostions[0].y, 1));
+        lineRenderer.SetPosition(1, new Vector3(playerPostions[1].x, playerPostions[1].y, 1));
         edgeCollider.points = playerPostions.ToArray();
     }
 
@@ -59,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerPostions.Add(newPlayerPos);
         lineRenderer.positionCount++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, newPlayerPos);
+        lineRenderer.SetPosition(lineRenderer.positionCount - 1, new Vector3(newPlayerPos.x, newPlayerPos.y, 1));
         edgeCollider.points = playerPostions.ToArray();
     }
 

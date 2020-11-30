@@ -352,6 +352,11 @@ PrefabInstance:
       propertyPath: levelLoader
       value: 
       objectReference: {fileID: 132690127}
+    - target: {fileID: 5655603377370649767, guid: 82bd7882ae321a743adbd171b7fd0a52,
+        type: 3}
+      propertyPath: linePointDiff
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bd7882ae321a743adbd171b7fd0a52, type: 3}
 --- !u!1 &1634129851
