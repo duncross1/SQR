@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/KeyWall.unity
     guid: 5518e757644a4f54e9ccc328b84cca6c
   - enabled: 1
+    path: Assets/Scenes/Actual Levels/QuickMaths.unity
+    guid: 9982b2c2dc2418d429a7b4a7294a99a6
+  - enabled: 1
     path: Assets/Scenes/Actual Levels/ALevel.unity
     guid: f2c008ab46802ba43a73256c7ee49b61
   - enabled: 1
@@ -48,8 +51,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/rLevel.unity
     guid: 68f7fda9ec1926f438e392b823c14a95
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/New Scene.unity
+    path: Assets/Scenes/Actual Levels/WLevel.unity
     guid: 7f385fe4849aed74a91efd6a994bcda1
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/AnotherOne.unity
+    guid: 7ae8e0c139305ac42908bb6368616c41
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/secondlineLevel.unity
+    guid: 699454e6553c5e24bbd9916fe5780b11
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/onthefly.unity
+    guid: ecfeb66bb4019be4782fcb0c8c10bd65
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/Beans.unity
+    guid: 72dc7a32c1f6ab346859c00cc86eea66
   - enabled: 1
     path: Assets/Scenes/Draw Scene.unity
     guid: f75b08e42ee04e5468ac263841f98a42

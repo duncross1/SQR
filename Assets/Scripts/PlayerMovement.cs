@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         lineRenderer = currentLine.GetComponent<LineRenderer>();
         edgeCollider = currentLine.GetComponent<EdgeCollider2D>();
         playerPostions.Clear();
-        Vector3 linepos = new Vector3(rb.position.x, rb.position.y, 1);
         playerPostions.Add(rb.position);
         playerPostions.Add(rb.position);
         lineRenderer.SetPosition(0, new Vector3(playerPostions[0].x, playerPostions[0].y, 1));
