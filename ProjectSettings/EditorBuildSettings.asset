@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WarpZone2.unity
+    path: Assets/Scenes/WarpZones/WarpZone1.unity
+    guid: c2a105f5fde848a4f925ecb8bd9f524f
+  - enabled: 1
+    path: Assets/Scenes/WarpZones/WarpZone2.unity
     guid: ce62d888ab8f37a4b8db8ea1df132c68
   - enabled: 1
     path: Assets/Scenes/Menu.unity

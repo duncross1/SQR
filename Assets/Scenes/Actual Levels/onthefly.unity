@@ -801,12 +801,12 @@ PrefabInstance:
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.78
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.11
+      value: -10.21
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
@@ -816,32 +816,32 @@ PrefabInstance:
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.017577143
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99984556
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.0140002
       objectReference: {fileID: 0}
     - target: {fileID: 3444904997118783955, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
         type: 3}
@@ -857,6 +857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -1906026257231909466, guid: 406dc99d1d9ab0342a701d9bf8a5d95b,
+        type: 3}
+      propertyPath: LevelToSkipTo
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406dc99d1d9ab0342a701d9bf8a5d95b, type: 3}
