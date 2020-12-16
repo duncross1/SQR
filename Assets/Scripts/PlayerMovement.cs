@@ -264,6 +264,12 @@ public class PlayerMovement : MonoBehaviour
             walkSpeed = 0;
             levelLoader.loadNextLevel();
         }
+        //LevelSkipper
+        if (collision.gameObject.tag == "LevelSkipper")
+        {
+            walkSpeed = 0;
+            levelLoader.loadGivenLevel(collision.GetComponent<LevelSkipper>().LevelToSkipTo);
+        }
         //Keys
         if (collision.gameObject.tag == "Key1" || collision.gameObject.tag == "Key2")
         {

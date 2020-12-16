@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class AudioManager : MonoBehaviour
     {
 
         DontDestroyOnLoad(transform.gameObject);
-
 
         foreach (Sound s in sounds)
         {

@@ -21,6 +21,7 @@ TagManager:
   - KeyWall
   - Key2
   - ColourRandomizer
+  - LevelSkipper
   layers:
   - Default
   - TransparentFX
