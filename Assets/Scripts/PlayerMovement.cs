@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     //obstacle checks
     bool touchingHole = false;
+    public bool hasPurpleColour = false;
 
 
     void Start()
@@ -135,32 +136,64 @@ public class PlayerMovement : MonoBehaviour
 
         // rb.rotation = angle;
 
-        //Colour swapping
-        if (Input.GetKeyDown(KeyCode.Q))
+        //Colour swapping - Doesn't have purple colour
+        if(hasPurpleColour == false)
         {
-            if (colour == 0)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                colour = 2;
+                if (colour == 0)
+                {
+                    colour = 2;
+                }
+                else
+                {
+                    colour -= 1;
+                }
+                GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
             }
-            else
-            {
-                colour -= 1;
-            }
-            GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
-        }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (colour == 2)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                colour = 0;
+                if (colour == 2)
+                {
+                    colour = 0;
+                }
+                else
+                {
+                    colour += 1;
+                }
+                GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
             }
-            else
-            {
-                colour += 1;
-            }
-            GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
         }
+        else //Colour swapping - Has purple colour
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (colour == 0)
+                {
+                    colour = 3;
+                }
+                else
+                {
+                    colour -= 1;
+                }
+                GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (colour == 3)
+                {
+                    colour = 0;
+                }
+                else
+                {
+                    colour += 1;
+                }
+                GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
+            }
+        }
+        
 
 
 
@@ -184,8 +217,12 @@ public class PlayerMovement : MonoBehaviour
         //Purple Walls
         if (collision.gameObject.tag == "PurpleWall")
         {
-            walkSpeed = 0;
-            levelLoader.loadCurrentLevel();
+            if(colour !=3)
+            {
+                walkSpeed = 0;
+                levelLoader.loadCurrentLevel();
+            }
+            
         }
         //Red Walls
         if (collision.gameObject.tag == "RedWall")
@@ -273,6 +310,14 @@ public class PlayerMovement : MonoBehaviour
         //Keys
         if (collision.gameObject.tag == "Key1" || collision.gameObject.tag == "Key2")
         {
+            Destroy(collision.gameObject);
+        }
+        //PurpleEnd
+        if (collision.gameObject.tag == "PurpleEnd")
+        {
+            hasPurpleColour = true;
+            colour = 3;
+            GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
             Destroy(collision.gameObject);
         }
         //Colour Switchers

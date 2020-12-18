@@ -22,6 +22,8 @@ TagManager:
   - Key2
   - ColourRandomizer
   - LevelSkipper
+  - PurpleEnd
+  - PurpleLine
   layers:
   - Default
   - TransparentFX

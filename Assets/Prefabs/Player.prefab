@@ -102,10 +102,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 655bdf088396d7049809575f3425d8bf, type: 3}
   - {fileID: 21300000, guid: 3d55d1b15cca03d41b0486cb131fbcdc, type: 3}
   - {fileID: 21300000, guid: 388f2850b5ca5c54684be54b19009ff0, type: 3}
+  - {fileID: 21300000, guid: d2f3baba119184f43be2da63259a3d54, type: 3}
   linePrefabs:
   - {fileID: 2064177599720104937, guid: 15be33ce61b21304aa3aa84745a5823f, type: 3}
   - {fileID: 2634988755155383303, guid: 4ffa14d9e0956574eafd2046c9105e8a, type: 3}
   - {fileID: 2634988755155383303, guid: 7b3633d8d20677f4b837885ea8981831, type: 3}
+  - {fileID: 2064177599720104937, guid: 79baaf3fdcb7f764391b3ec6fa93a574, type: 3}
   currentLine: {fileID: 0}
   lineRenderer: {fileID: 0}
   edgeCollider: {fileID: 0}
@@ -115,6 +117,7 @@ MonoBehaviour:
   time: 0
   timerAnimator: {fileID: 0}
   timerOn: 0
+  hasPurpleColour: 0
 --- !u!50 &5655603377370649763
 Rigidbody2D:
   serializedVersion: 4
