@@ -32,6 +32,13 @@ public class EndingAudio : MonoBehaviour
 
     void Start()
     {
+        //Destroy AudioManager
+        if (FindObjectOfType<AudioManager>() != null)
+        {
+            Debug.Log("found audio manager");
+            Destroy(FindObjectOfType<AudioManager>().gameObject);
+        }
+
         PlaySong("PrePickup");
     }
 
