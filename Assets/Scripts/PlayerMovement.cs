@@ -315,9 +315,20 @@ public class PlayerMovement : MonoBehaviour
         //PurpleEnd
         if (collision.gameObject.tag == "PurpleEnd")
         {
+            //Make Player Purple
             hasPurpleColour = true;
             colour = 3;
             GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
+
+            //Increase players speed back to normal
+            walkSpeed = 5;
+
+            //Music change
+            FindObjectOfType<EndingAudio>().StopSong("PrePickup");
+            FindObjectOfType<EndingAudio>().PlaySong("PostPickup");
+
+
+
             Destroy(collision.gameObject);
         }
         //Colour Switchers
