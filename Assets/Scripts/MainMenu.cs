@@ -11,7 +11,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        FindObjectOfType<AudioManager>().PlaySong("Music");
+        Destroy(GameObject.Find("MenuMusicSource"));
+        GameObject.Find("GameMusicSource").gameObject.GetComponent<AudioSource>().Play();
         levelLoader.loadNextLevel();
     }
 

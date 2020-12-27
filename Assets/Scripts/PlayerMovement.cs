@@ -324,8 +324,7 @@ public class PlayerMovement : MonoBehaviour
             walkSpeed = 5;
 
             //Music change
-            FindObjectOfType<EndingAudio>().StopSong("PrePickup");
-            FindObjectOfType<EndingAudio>().PlaySong("PostPickup");
+            FindObjectOfType<EndingAudio>().changeClip();
 
 
 
