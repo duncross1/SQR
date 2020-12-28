@@ -38,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
     public bool cameraFollow = false;
 
+    
+
 
     void Start()
     {
-        Debug.Log("B");
         CreateLine();
+        GameObject.Find("SaveDataWatcher").GetComponent<SaveDataWatcher>().SaveGame();
     }
 
     void CreateLine()
@@ -211,6 +213,14 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            levelLoader.loadNextLevel();
+        }
+        
+
+
     }
 
 
