@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     bool touchingHole = false;
     public bool hasPurpleColour = false;
 
+    public bool cameraFollow = false;
+
 
     void Start()
     {
@@ -73,9 +75,13 @@ public class PlayerMovement : MonoBehaviour
             cam = Camera.main;
         }
 
-        
-        
-        
+        if (cameraFollow == true)
+        {
+            cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
+        }
+
+
+
 
         Vector2 tempPlayerPos = rb.position;
 

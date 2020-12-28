@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WarpZones/WarpZone1.unity
-    guid: c2a105f5fde848a4f925ecb8bd9f524f
-  - enabled: 1
-    path: Assets/Scenes/WarpZones/WarpZone2.unity
-    guid: ce62d888ab8f37a4b8db8ea1df132c68
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 785b43d036622c145a3f55dd2725e82b
   - enabled: 1
@@ -45,14 +39,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/QuickMaths.unity
     guid: 9982b2c2dc2418d429a7b4a7294a99a6
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/ALevel.unity
-    guid: f2c008ab46802ba43a73256c7ee49b61
-  - enabled: 1
     path: Assets/Scenes/Actual Levels/SnekLevel.unity
     guid: 4c7dc379fc0c2d84db9893e110c61801
   - enabled: 1
     path: Assets/Scenes/Actual Levels/TLevel.unity
     guid: 3472cc1011be1d94d95e6200ec9dcb46
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/ALevel.unity
+    guid: f2c008ab46802ba43a73256c7ee49b61
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/almost.unity
+    guid: 90e720911081f7048bff1b1aca4cd709
   - enabled: 1
     path: Assets/Scenes/Actual Levels/RandomizerTut.unity
     guid: f7d1204163644b94889cc3d6401fdf61
@@ -60,17 +57,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/rLevel.unity
     guid: 68f7fda9ec1926f438e392b823c14a95
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/onthefly.unity
-    guid: ecfeb66bb4019be4782fcb0c8c10bd65
-  - enabled: 1
     path: Assets/Scenes/Actual Levels/Chringle.unity
     guid: 8ab2a56943eeaab47ae2c326aa481df7
   - enabled: 1
+    path: Assets/Scenes/Actual Levels/onthefly.unity
+    guid: ecfeb66bb4019be4782fcb0c8c10bd65
+  - enabled: 1
     path: Assets/Scenes/Actual Levels/AnotherOne.unity
     guid: 7ae8e0c139305ac42908bb6368616c41
-  - enabled: 1
-    path: Assets/Scenes/Actual Levels/peter.unity
-    guid: e3418e04418c7e54e9c71b064afc1999
   - enabled: 1
     path: Assets/Scenes/Actual Levels/secondlineLevel.unity
     guid: 699454e6553c5e24bbd9916fe5780b11
@@ -78,20 +72,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/H.unity
     guid: 177e2422431a2ee4f951ae3e8d2348cb
   - enabled: 1
+    path: Assets/Scenes/Actual Levels/trello.unity
+    guid: aeb58798c99137446823b7a5b1458c32
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/peter.unity
+    guid: e3418e04418c7e54e9c71b064afc1999
+  - enabled: 1
     path: Assets/Scenes/Actual Levels/Charger.unity
     guid: b3c5702f5b4e7dc4db800a3f8ac34ee9
-  - enabled: 1
-    path: Assets/Scenes/Actual Levels/Harro.unity
-    guid: 63ad26c1a39998f49a0ef58a15760790
-  - enabled: 1
-    path: Assets/Scenes/Actual Levels/BackAgain.unity
-    guid: 266aaafe2e1dc4b499400d0eed147a55
   - enabled: 1
     path: Assets/Scenes/Actual Levels/WLevel.unity
     guid: 7f385fe4849aed74a91efd6a994bcda1
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/WeBack.unity
-    guid: bc7d0a420264565498fb55649a2ecb02
+    path: Assets/Scenes/Actual Levels/BackAgain.unity
+    guid: 266aaafe2e1dc4b499400d0eed147a55
   - enabled: 1
     path: Assets/Scenes/Actual Levels/Beans.unity
     guid: 72dc7a32c1f6ab346859c00cc86eea66
@@ -102,14 +96,32 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/HorizontalMoving.unity
     guid: 40907519268a51c458b9fc07894be40f
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/Prop.unity
-    guid: 2a4e5a681a161fb44803f1f2c5f1e614
+    path: Assets/Scenes/Actual Levels/WeBack.unity
+    guid: bc7d0a420264565498fb55649a2ecb02
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/Harro.unity
+    guid: 63ad26c1a39998f49a0ef58a15760790
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/milk.unity
+    guid: 8d759d696fe118d449adf87b561daa78
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/chop.unity
+    guid: 7e343676b1cec2f4fa654d76c8e31916
   - enabled: 1
     path: Assets/Scenes/Actual Levels/Maze.unity
     guid: f68b66a4386fc09499782ab31c51c133
   - enabled: 1
+    path: Assets/Scenes/Actual Levels/Prop.unity
+    guid: 2a4e5a681a161fb44803f1f2c5f1e614
+  - enabled: 1
     path: Assets/Scenes/Actual Levels/burrito.unity
     guid: 219fa9d610cbdb040831950e0dd530b4
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/42now.unity
+    guid: 886623cc86f7a444a87cc22f0e54bc23
+  - enabled: 1
+    path: Assets/Scenes/Actual Levels/onthemove.unity
+    guid: 3f27893a5febde54b932e872f2bd9773
   - enabled: 1
     path: Assets/Scenes/Actual Levels/tub.unity
     guid: 0249bc56ce0ab19459f9a468eb103177
@@ -120,18 +132,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Levels/0116.unity
     guid: 0406ee41dc93cb24d84c2302a8ce8eee
   - enabled: 1
-    path: Assets/Scenes/Actual Levels/onthemove.unity
-    guid: 3f27893a5febde54b932e872f2bd9773
-  - enabled: 1
-    path: Assets/Scenes/Actual Levels/milk.unity
-    guid: 8d759d696fe118d449adf87b561daa78
-  - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 053815ff01e484c4b9f9da1c6ef3038e
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 41d7fdc72ea410041ba92d82c1a846b9
   - enabled: 1
-    path: Assets/Scenes/Draw Scene.unity
-    guid: f75b08e42ee04e5468ac263841f98a42
+    path: Assets/Scenes/WarpZones/WarpZone1.unity
+    guid: c2a105f5fde848a4f925ecb8bd9f524f
+  - enabled: 1
+    path: Assets/Scenes/WarpZones/WarpZone2.unity
+    guid: ce62d888ab8f37a4b8db8ea1df132c68
+  - enabled: 1
+    path: Assets/Scenes/WarpZones/WarpZone3.unity
+    guid: 9a37f34a7b0eee34d85af8f20b035db9
+  - enabled: 1
+    path: Assets/Scenes/WarpZones/LevelSelect.unity
+    guid: b94f973a053509a4297ae0065e2f82df
   m_configObjects: {}
