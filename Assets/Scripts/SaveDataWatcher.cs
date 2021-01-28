@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class SaveDataWatcher : MonoBehaviour
 {
@@ -9,22 +11,22 @@ public class SaveDataWatcher : MonoBehaviour
     public int levelIndex;
     public bool hasStartedGame;
     public bool hasFinishedGame;
+    public int qualityIndex;
+
 
 
 
 
     void Awake()
     {
-        loadGame();
+        loadGame(); 
     }
     
-    // Update is called once per frame
-    void Update()
+
+
+    public void setQualityIndex(int qualityIndexIn)
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            loadGame();
-        }
+        qualityIndex = qualityIndexIn;
     }
 
     public void SaveGame()
@@ -38,22 +40,18 @@ public class SaveDataWatcher : MonoBehaviour
             hasFinishedGame = true;
         }
         levelIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("ts: " + levelIndex);
         SaveSystem.saveGame(this);
     }
 
     public void loadGame()
     {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
         SaveData data = SaveSystem.loadGame();
 
         levelIndex = data.levelIndex;
         hasStartedGame = data.hasStartedGame;
         hasFinishedGame = data.hasFinishedGame;
-
-        Debug.Log(levelIndex);
-        Debug.Log("startedGame: " + hasStartedGame);
-        Debug.Log("finishedGame " + hasFinishedGame);
+        qualityIndex = data.qualityIndex;
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
 }

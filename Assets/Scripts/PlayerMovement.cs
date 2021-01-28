@@ -201,14 +201,20 @@ public class PlayerMovement : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = playerSprites[colour];
             }
         }
-        
 
 
 
-        
+
+
 
 
         //DEBUG
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            levelLoader.loadGivenLevel(0);
+            Destroy(GameObject.Find("GameMusicSource"));
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

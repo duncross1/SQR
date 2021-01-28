@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenu : MonoBehaviour
 {
 
@@ -12,6 +13,15 @@ public class MainMenu : MonoBehaviour
     public GameObject finishedGameMenu;
     public SaveDataWatcher saveDataWatcher;
 
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
     public void PlayButton()
     {
@@ -59,6 +69,5 @@ public class MainMenu : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
-        Debug.Log("Exit (application.quit() doesnt work in-editor but will when built");
     }
 }

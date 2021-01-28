@@ -24,6 +24,7 @@ TagManager:
   - LevelSkipper
   - PurpleEnd
   - PurpleLine
+  - QualityDropdown
   layers:
   - Default
   - TransparentFX

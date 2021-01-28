@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 5655603377370649767, guid: 82bd7882ae321a743adbd171b7fd0a52,
         type: 3}
       propertyPath: hasPurpleColour
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82bd7882ae321a743adbd171b7fd0a52, type: 3}

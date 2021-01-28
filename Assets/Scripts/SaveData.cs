@@ -10,12 +10,14 @@ public class SaveData
     public int levelIndex;
     public bool hasStartedGame;
     public bool hasFinishedGame;
+    public int qualityIndex;
     
     public SaveData(SaveDataWatcher sdw)
     {
         levelIndex = sdw.levelIndex;
         hasStartedGame = sdw.hasStartedGame;
         hasFinishedGame = sdw.hasFinishedGame;
+        qualityIndex = sdw.qualityIndex;
 
     }
 }
